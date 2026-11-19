@@ -35,7 +35,13 @@ a {
     width: min(1180px, 90%);
     margin: auto;
 }
-
+.project-logo {
+    max-width: 160px;
+    max-height: 110px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
 
 /* =====================================
    2. NAVIGATION
@@ -116,11 +122,16 @@ a {
 .hero {
     min-height: 690px;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1fr 0.85fr;
     align-items: center;
-    gap: 65px;
+    gap: 35px;
     padding-top: 65px;
     padding-bottom: 65px;
+    background: #b8c7ee;
+    width: 100%;
+}
+.hero-content {
+    transform: translateX(150px);
 }
 
 .availability {
@@ -242,6 +253,8 @@ a {
 }
 
 .profile-frame {
+    width: 85%;
+max-width: 400px;
     position: relative;
     background: var(--navy);
     padding: 12px;
@@ -250,28 +263,13 @@ a {
     transform: rotate(1deg);
     box-shadow: 18px 20px 0 rgba(71, 120, 255, 0.10);
 }
-
-.photo-placeholder {
-    min-height: 440px;
-    background: #e9edf5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--navy);
-}
-
-.photo-placeholder span {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
-
-.photo-placeholder small {
-    color: var(--text);
-    font-size: 12px;
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: inherit;
 }
 
 .photo-caption {
@@ -322,8 +320,6 @@ a {
     .hero h1 {
         font-size: 65px;
     }
-
-    .photo-placeholder { min-height: 380px; }
 }
 
 @media (max-width: 680px) {
@@ -373,7 +369,7 @@ a {
 ===================================== */
 
 .about {
-    background: var(--white);
+    background:#424959;
     padding: 110px 9%;
 }
 
@@ -499,7 +495,7 @@ a {
 ===================================== */
 
 .experience {
-    background: var(--background);
+    background: #263B70;
     padding: 110px 9%;
 }
 
@@ -508,10 +504,10 @@ a {
     grid-template-columns: 0.35fr 1.65fr;
     gap: 65px;
     padding: 45px;
-    background: var(--white);
+    background: #7e9aee;
     border: 1px solid var(--border);
     border-radius: 8px;
-    box-shadow: 0 15px 45px rgba(16, 27, 53, 0.04);
+    box-shadow: 0 15px 45px rgba(59, 95, 180, 0.04);
 }
 
 .experience-date {
@@ -527,7 +523,7 @@ a {
 .experience-status {
     width: fit-content;
     padding: 7px 10px;
-    background: #e9f8f2;
+    background: #97cbeb;
     color: #16845f;
     border-radius: 3px;
     font-size: 9px;
@@ -617,7 +613,7 @@ a {
 ===================================== */
 
 .skills {
-    background: var(--navy);
+    background: #c8d1e5;
     padding: 110px 9%;
 }
 
@@ -714,8 +710,8 @@ a {
 ===================================== */
 
 .projects {
-    background: var(--white);
-    padding: 110px 9%;
+     background: #243F8F;
+    border: 1px solid #3456B0;
 }
 
 .projects-container {
@@ -723,15 +719,16 @@ a {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-    margin-top: 60px;
+     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 50px auto 0;
+    max-width: 1000px;
 }
 
 .project-card {
-    background: var(--white);
-    border: 1px solid var(--border);
+    background: #263B70;
+    border: 1px solid #354B7E;
     border-radius: 7px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -762,7 +759,7 @@ a {
 }
 
 .project-preview {
-    min-height: 220px;
+    min-height: 160px;
     margin: 0 15px;
     border-radius: 5px;
     display: flex;
@@ -787,16 +784,41 @@ a {
 }
 
 .careertrack-preview {
-    background: var(--navy);
-    color: var(--white);
+    background: #eef2ff;
+    color: var(--navy);
 }
-
 .careertrack-preview small {
     color: #8daaff;
 }
 
+.dosebeauty-preview {
+    background: #f2b3d5;
+    color: #713B55;
+}
+.wildlife-preview {
+    background: #2ea26c;
+    color: #215c3f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.wildlife-preview span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.wildlife-preview small {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
 .restaurant-preview {
-    background: #f2eee7;
+    background: #ebb75d;
     color: #493b2e;
 }
 
@@ -811,19 +833,19 @@ a {
 }
 
 .project-info {
-    padding: 25px 23px 30px;
+     padding: 20px 23px 22px;
     min-height: 230px;
 }
 
 .project-info h3 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 21px;
-    color: var(--navy);
+     color: #ffffff;
     margin-bottom: 12px;
 }
 
 .project-info p {
-    color: var(--text);
+    color: #D5DDF0;;
     font-size: 13px;
     line-height: 1.8;
     margin-bottom: 20px;
@@ -837,9 +859,9 @@ a {
 
 .project-tags span {
     padding: 7px 10px;
-    background: var(--background);
+    background: #344B80;
+    color: #EAF0FF;
     border-radius: 3px;
-    color: var(--text);
     font-size: 10px;
     font-weight: 600;
 }
