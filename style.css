@@ -323,6 +323,7 @@ max-width: 400px;
 }
 
 @media (max-width: 680px) {
+    
 
     .navbar {
         height: 70px;
@@ -337,6 +338,10 @@ max-width: 400px;
         padding-top: 55px;
         gap: 45px;
     }
+    
+    .hero-content {
+    transform: translateX(0);
+}
 
     .hero h1 {
         font-size: 65px;
